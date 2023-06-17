@@ -15,36 +15,40 @@ $name = $resultData['name'];
 $age = $resultData['age'];
 $email = $resultData['email'];
 ?>
+<!DOCTYPE html>
 <html>
-<head>	
+<head>
 	<title>Edit Data</title>
+	<!-- Include Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 
 <body>
-    <h2>Edit Data</h2>
-    <p>
-	    <a href="index.php">Home</a>
-    </p>
-	
-	<form name="edit" method="post" action="editAction.php">
-		<table border="0">
-			<tr> 
-				<td>Name</td>
-				<td><input type="text" name="name" value="<?php echo $name; ?>"></td>
-			</tr>
-			<tr> 
-				<td>Age</td>
-				<td><input type="text" name="age" value="<?php echo $age; ?>"></td>
-			</tr>
-			<tr> 
-				<td>Email</td>
-				<td><input type="text" name="email" value="<?php echo $email; ?>"></td>
-			</tr>
-			<tr>
-				<td><input type="hidden" name="id" value=<?php echo $id; ?>></td>
-				<td><input type="submit" name="update" value="Update"></td>
-			</tr>
-		</table>
-	</form>
+	<div class="container">
+		<h2>Edit Data</h2>
+		<p>
+			<a href="index.php" class="btn btn-primary">Home</a>
+		</p>
+
+		<form name="edit" method="post" action="editAction.php">
+			<div class="mb-3">
+				<label for="name" class="form-label">Name</label>
+				<input type="text" class="form-control" name="name" value="<?php echo $name; ?>">
+			</div>
+			<div class="mb-3">
+				<label for="age" class="form-label">Age</label>
+				<input type="text" class="form-control" name="age" value="<?php echo $age; ?>">
+			</div>
+			<div class="mb-3">
+				<label for="email" class="form-label">Email</label>
+				<input type="text" class="form-control" name="email" value="<?php echo $email; ?>">
+			</div>
+			<input type="hidden" name="id" value="<?php echo $id; ?>">
+			<button type="submit" class="btn btn-primary" name="update">Update</button>
+		</form>
+	</div>
+
+	<!-- Include Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
